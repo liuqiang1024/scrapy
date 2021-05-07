@@ -18,3 +18,8 @@ class WallPaperItem(scrapy.Item):
     text = scrapy.Field()
     tag = scrapy.Field()
     next_page = scrapy.Field()
+
+
+class PvpSpiderItem(scrapy.Item):
+    name = scrapy.Field()
+    url = scrapy.Field()

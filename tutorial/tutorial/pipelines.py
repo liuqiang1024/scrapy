@@ -5,6 +5,8 @@
 
 
 # useful for handling different item types with a single interface
+from urllib.request import urlretrieve
+
 import pymysql
 from itemadapter import ItemAdapter
 
@@ -22,7 +24,6 @@ from itemadapter import ItemAdapter
 
 class TutorialPipeline:
     def process_item(self, item, spider):
-        print(111111111111)
         return item
 
 
@@ -54,3 +55,9 @@ class WallPaperPipeline:
         # 关闭游标和连接
         self.cursor.close()
         self.conn.close()
+
+
+class PvpPipeline:
+    def process_item(self, item, spider):
+        print(item['url'], item['name'])
+        urlretrieve(item['url'], "D:\pvp\\" + item['name'] + '.jpg')

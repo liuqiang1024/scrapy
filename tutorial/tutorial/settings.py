@@ -39,9 +39,8 @@ LOG_ENABLED = True
 
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
-  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-  'Accept-Language': 'en',
-  'Referer':'http://www.win4000.com/'
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'Referer': 'https://pvp.qq.com/'
 }
 
 # Enable or disable spider middlewares
@@ -65,8 +64,9 @@ DEFAULT_REQUEST_HEADERS = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'tutorial.pipelines.WallPaperPipeline': 300,
-   'tutorial.pipelines.TutorialPipeline': 301,
+    'tutorial.pipelines.WallPaperPipeline': 300,
+    'tutorial.pipelines.TutorialPipeline': 301,
+    'tutorial.pipelines.PvpPipeline': 302,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
